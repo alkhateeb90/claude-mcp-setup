@@ -1,0 +1,19 @@
+# Never commit actual configuration with tokens
+claude_desktop_config_actual.json
+config_with_token.json
+
+# Node modules if testing locally
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
