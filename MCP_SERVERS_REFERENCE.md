@@ -152,6 +152,66 @@ Enables Claude to query SQLite databases on your local system.
 
 ---
 
+## Shadcn UI MCP Server
+
+**Package**: `@jpisnice/shadcn-ui-mcp-server`
+
+### What It Does
+Provides Claude with access to shadcn/ui component library, including:
+- Component source code and documentation
+- Component demos and examples
+- Component metadata and usage patterns
+- Support for React, Svelte, Vue, and React Native frameworks
+
+### Configuration
+```json
+{
+  "shadcn-ui": {
+    "command": "npx",
+    "args": ["-y", "@jpisnice/shadcn-ui-mcp-server"]
+  }
+}
+```
+
+### Framework Support
+By default, the server uses React components. You can specify a different framework:
+- **React** (default): `shadcn-ui/ui` repository
+- **Svelte**: Set `FRAMEWORK=svelte` environment variable
+- **Vue**: Set `FRAMEWORK=vue` environment variable
+- **React Native**: Set `FRAMEWORK=react-native` environment variable
+
+### Features
+- Access to official shadcn/ui components
+- Component source code in TypeScript/TSX
+- Real-time documentation from the shadcn repository
+- Support for UI component queries and references
+
+### Rate Limiting
+- Without GitHub API key: 60 requests/hour
+- With GitHub API key: 5,000 requests/hour (recommended for heavy use)
+
+To add a GitHub API key, update the configuration:
+```json
+{
+  "shadcn-ui": {
+    "command": "npx",
+    "args": ["-y", "@jpisnice/shadcn-ui-mcp-server"],
+    "env": {
+      "GITHUB_TOKEN": "your_github_token_here"
+    }
+  }
+}
+```
+
+### Example Use Cases
+- "Show me the shadcn Button component source code"
+- "What props does the shadcn Dialog component accept?"
+- "Generate a form using shadcn components"
+- "How do I customize the shadcn Card component?"
+- "Show me an example of using the shadcn Select component"
+
+---
+
 ## Additional MCP Servers
 
 There are many other MCP servers available. Here are some popular ones you might want to add:

@@ -25,6 +25,7 @@ Your repository now contains:
 2. **Filesystem** - Read/write local files
 3. **Fetch** - Browse and fetch web content
 4. **SQLite** - Query SQLite databases
+5. **Shadcn UI** - Access shadcn/ui component references and source code
 
 ## Next Steps
 
@@ -58,6 +59,7 @@ Once configured, try asking Claude:
 - "List my GitHub repositories"
 - "Read the file at [your file path]"
 - "Fetch content from https://example.com"
+- "Show me the shadcn Button component"
 
 ## Important Security Notes
 
@@ -112,6 +114,12 @@ With these MCP servers, Claude Desktop will be able to:
 - Analyze data
 - Generate reports
 
+✨ **Work with Shadcn UI**
+- Access component source code
+- Get component documentation
+- Build UIs with shadcn components
+- Support for React, Svelte, Vue, and React Native
+
 ## Keep Your Setup Updated
 
 To update MCP servers in the future:
@@ -121,6 +129,7 @@ npm update -g @modelcontextprotocol/server-github
 npm update -g @modelcontextprotocol/server-filesystem
 npm update -g @modelcontextprotocol/server-fetch
 npm update -g @modelcontextprotocol/server-sqlite
+npm update -g @jpisnice/shadcn-ui-mcp-server
 ```
 
 ## Adding More Servers

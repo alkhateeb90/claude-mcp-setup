@@ -34,6 +34,13 @@
         "--db-path",
         "C:\\Users\\YOUR_USERNAME\\databases"
       ]
+    },
+    "shadcn-ui": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@jpisnice/shadcn-ui-mcp-server"
+      ]
     }
   }
 }

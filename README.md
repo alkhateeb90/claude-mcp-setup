@@ -14,6 +14,7 @@ This setup includes the following MCP servers:
 2. **Filesystem MCP Server** - Read and write files on your local computer
 3. **Fetch MCP Server** - Browse and fetch web content
 4. **SQLite MCP Server** - Query SQLite databases
+5. **Shadcn UI MCP Server** - Access shadcn/ui component references, source code, and demos
 
 ## Prerequisites
 
@@ -39,7 +40,9 @@ If not installed, download from [nodejs.org](https://nodejs.org/).
 
 ### Step 2: Install MCP Servers
 
-The MCP servers will be installed globally using npm. Run the following commands:
+The MCP servers are configured to run via `npx`, which automatically downloads and executes them when needed. No manual installation is required! The configuration uses `npx -y` to automatically approve downloads.
+
+If you prefer to install them globally for faster startup, you can run:
 
 ```bash
 # Install GitHub MCP Server
@@ -53,6 +56,9 @@ npm install -g @modelcontextprotocol/server-fetch
 
 # Install SQLite MCP Server
 npm install -g @modelcontextprotocol/server-sqlite
+
+# Install Shadcn UI MCP Server
+npm install -g @jpisnice/shadcn-ui-mcp-server
 ```
 
 ### Step 3: Create GitHub Personal Access Token
