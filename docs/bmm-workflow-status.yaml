@@ -1,0 +1,152 @@
+# Workflow Status Template
+
+# This tracks progress through BMM methodology Analysis, Planning, and Solutioning phases.
+# Implementation phase is tracked separately in sprint-status.yaml
+
+# STATUS DEFINITIONS:
+# ==================
+# Initial Status (before completion):
+#   - required: Must be completed to progress
+#   - optional: Can be completed but not required
+#   - recommended: Strongly suggested but not required
+#   - conditional: Required only if certain conditions met (e.g., if_has_ui)
+#
+# Completion Status:
+#   - {file-path}: File created/found (e.g., "docs/product-brief.md")
+#   - skipped: Optional/conditional workflow that was skipped
+
+generated: "2025-12-03"
+project: "Optionali 2"
+project_type: "brownfield"
+selected_track: "bmad-method"
+field_type: "brownfield"
+workflow_path: "method-brownfield"
+
+workflow_status:
+  # PREREQUISITE: Documentation (for brownfield projects)
+  - phase: "prerequisite"
+    name: "Documentation"
+    note: "Understand existing codebase before planning"
+    workflows:
+      - id: "document-project"
+        name: "Document Existing Project"
+        status: "required"
+        agent: "analyst"
+        command: "document-project"
+        output: "Comprehensive project documentation"
+        purpose: "Analyze and document existing Optionali codebase"
+
+  # PHASE 0: Discovery (Optional - User Selected All)
+  - phase: 0
+    name: "Discovery (Optional)"
+    note: "User-selected discovery workflows"
+    workflows:
+      - id: "brainstorm-project"
+        name: "Brainstorm Project"
+        status: "optional"
+        agent: "analyst"
+        command: "brainstorm-project"
+        output: "Brainstorming session report"
+        purpose: "Explore trading strategies, features, and innovations for Optionali 2"
+
+      - id: "research"
+        name: "Research"
+        status: "optional"
+        agent: "analyst"
+        command: "research"
+        output: "Research report"
+        purpose: "Analyze existing trading platforms, APIs, market data providers, regulations"
+
+      - id: "product-brief"
+        name: "Product Brief"
+        status: "optional"
+        agent: "analyst"
+        command: "product-brief"
+        output: "docs/product-brief.md"
+        purpose: "Strategic planning document for Optionali 2 enhancements"
+
+  # PHASE 1: Planning (Required)
+  - phase: 1
+    name: "Planning"
+    note: "Define requirements for Optionali 2 enhancements"
+    workflows:
+      - id: "prd"
+        name: "Product Requirements Document"
+        status: "required"
+        agent: "pm"
+        command: "prd"
+        output: "docs/PRD.md"
+        purpose: "Define new features and changes for Optionali 2"
+        note: "Must consider existing system constraints"
+
+      - id: "validate-prd"
+        name: "Validate PRD"
+        status: "optional"
+        agent: "pm"
+        command: "validate-prd"
+
+      - id: "create-ux-design"
+        name: "UX Design"
+        status: "conditional"
+        condition: "if_has_ui"
+        agent: "ux-designer"
+        command: "create-ux-design"
+        output: "docs/UX-Design.md"
+        purpose: "Design user interface for trading dashboard/tools"
+
+  # PHASE 2: Solutioning (Required)
+  - phase: 2
+    name: "Solutioning"
+    note: "Design technical solution and break down into stories"
+    workflows:
+      - id: "create-architecture"
+        name: "Create Architecture"
+        status: "recommended"
+        agent: "architect"
+        command: "create-architecture"
+        output: "docs/Architecture.md"
+        purpose: "Integration architecture - focused solution design for Optionali 2 enhancements"
+        note: "HIGHLY RECOMMENDED: Distills brownfield context into focused solution. Prevents agent confusion."
+
+      - id: "create-epics-and-stories"
+        name: "Create Epics and Stories"
+        status: "required"
+        agent: "pm"
+        command: "create-epics-and-stories"
+        output: "docs/epics-and-stories.md"
+        purpose: "Break down PRD into implementable work items"
+
+      - id: "test-design"
+        name: "Test Design"
+        status: "recommended"
+        agent: "tea"
+        command: "test-design"
+        output: "docs/test-design.md"
+        purpose: "System-level testability review for trading system"
+
+      - id: "validate-architecture"
+        name: "Validate Architecture"
+        status: "optional"
+        agent: "architect"
+        command: "validate-architecture"
+
+      - id: "implementation-readiness"
+        name: "Implementation Readiness Check"
+        status: "required"
+        agent: "architect"
+        command: "implementation-readiness"
+        purpose: "Validate all planning artifacts align before implementation"
+        note: "Gate check before starting development"
+
+  # PHASE 3: Implementation
+  - phase: 3
+    name: "Implementation"
+    note: "Tracked separately in sprint-status.yaml"
+    workflows:
+      - id: "sprint-planning"
+        name: "Sprint Planning"
+        status: "required"
+        agent: "sm"
+        command: "sprint-planning"
+        output: "docs/sprint-status.yaml"
+        purpose: "Initialize sprint tracking and story management"
