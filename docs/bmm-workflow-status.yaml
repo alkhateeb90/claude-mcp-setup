@@ -17,25 +17,12 @@
 
 generated: "2025-12-03"
 project: "Optionali 2"
-project_type: "brownfield"
+project_type: "greenfield"
 selected_track: "bmad-method"
-field_type: "brownfield"
-workflow_path: "method-brownfield"
+field_type: "greenfield"
+workflow_path: "method-greenfield"
 
 workflow_status:
-  # PREREQUISITE: Documentation (for brownfield projects)
-  - phase: "prerequisite"
-    name: "Documentation"
-    note: "Understand existing codebase before planning"
-    workflows:
-      - id: "document-project"
-        name: "Document Existing Project"
-        status: "required"
-        agent: "analyst"
-        command: "document-project"
-        output: "Comprehensive project documentation"
-        purpose: "Analyze and document existing Optionali codebase"
-
   # PHASE 0: Discovery (Optional - User Selected All)
   - phase: 0
     name: "Discovery (Optional)"
@@ -68,7 +55,7 @@ workflow_status:
   # PHASE 1: Planning (Required)
   - phase: 1
     name: "Planning"
-    note: "Define requirements for Optionali 2 enhancements"
+    note: "Define complete requirements for Optionali 2 trading platform"
     workflows:
       - id: "prd"
         name: "Product Requirements Document"
@@ -76,8 +63,7 @@ workflow_status:
         agent: "pm"
         command: "prd"
         output: "docs/PRD.md"
-        purpose: "Define new features and changes for Optionali 2"
-        note: "Must consider existing system constraints"
+        purpose: "Define all features and requirements for Optionali 2 from scratch"
 
       - id: "validate-prd"
         name: "Validate PRD"
@@ -101,12 +87,12 @@ workflow_status:
     workflows:
       - id: "create-architecture"
         name: "Create Architecture"
-        status: "recommended"
+        status: "required"
         agent: "architect"
         command: "create-architecture"
         output: "docs/Architecture.md"
-        purpose: "Integration architecture - focused solution design for Optionali 2 enhancements"
-        note: "HIGHLY RECOMMENDED: Distills brownfield context into focused solution. Prevents agent confusion."
+        purpose: "Complete system architecture for Optionali 2 trading platform"
+        note: "Required: Design complete system from scratch for greenfield project"
 
       - id: "create-epics-and-stories"
         name: "Create Epics and Stories"
